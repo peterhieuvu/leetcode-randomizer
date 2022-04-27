@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Space } from 'antd';
+import ProblemList from './problemview/ProblemList';
+import { GithubFilled } from '@ant-design/icons';
+
+const { Header, Footer, Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{height: '100%'}}>
+      <Header className='header-class'>Page Header</Header>
+      <Content className='content'>
+        <div className='content-body-wrapper'>
+          <ProblemList />
+        </div>
+      </Content>
+      <Footer style={{textAlign: 'center'}}>
+        <Space size='small'>
+          <a href='https://github.com/peterhieuvu/leetcode-randomizer'><GithubFilled className='icon-link' /></a>
+          Peter Hieu Vu ©2022
+        </Space>
+      </Footer>
+    </Layout>
   );
 }
 
